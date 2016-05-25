@@ -1,0 +1,168 @@
+@import "components/_variables"; // no extension because multiple preprocessor types are supported and variables is a keyword.
+
+
+//Scalable and Modular CSS (SMACSS) system
+//divided into 5 sections : 1/Base rules 2/Layout rules 3/Module rules 4/State rules 5/Theme rules
+
+/*
+01. Base
+*/
+body {
+  background: @primary-background;
+  font-family: @body-copy;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  color: @primary-text;
+}
+ul,
+ol {
+}
+li {
+}
+a, a:link, a:visited {
+}
+a:hover {
+}
+p {
+}
+hr {
+}
+
+/*
+02. LAYOUT
+  Styles specific to your layout or website
+*/
+
+///////Header///////////
+.header .container {
+  background: @primary-background;
+  padding-left: 0;
+  padding-right: 0;
+}
+.header {
+  padding: (@padding) 0;
+  font-size: (@base-font-size * 1.5)
+}
+.main-nav {
+  line-height: 36px; // vertical center with logo
+}
+.main-nav ul {
+  margin-bottom: 0;
+}
+.main-nav li.divider {
+  color: @border-color;
+}
+
+//////Footer////////////
+.footer {
+  text-align: center;
+  color: @inverse-text;
+  padding-bottom: (@padding * 4);
+}
+.footer .container {
+  background: @inverse-background;
+  padding: (@padding * 4) 0;
+}
+// add padding around social media links
+.social-media {
+  padding: @padding 0;
+}
+
+/////// Home page/////////////
+// here - allows image to go right to the edge
+.public-banner .col-lg-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+// the image will automatically resize at smaller screen
+.public-banner img {
+  width: 100%;
+  height: auto;
+}
+// add some padding around the about headline
+.home-about {
+  padding: (@padding * 4) 0 (@padding * 6) 0;
+}
+// center all items
+.home-food {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+// add a little extra padding under images
+.home-food img {
+  padding-bottom: @padding;
+}
+// add review padding consistent with about
+.reviews {
+  padding: (@padding * 4) 0 (@padding * 6) 0;
+}
+.container {
+  background: @secondary-background;
+}
+
+/////// About page/////////////
+.page-body {
+  padding: (@padding * 4);
+  //background: @secondary-background;
+}
+.about-social-media {
+  margin: (@margin * 1) 0;
+  font-size: (@font-size * 2);
+}
+
+
+/////// Menu page/////////////
+.page-header {
+  padding-bottom: (@padding * 0.3);
+  margin: @margin 0;
+  border-bottom: (@border-size * 5) @border-type @primary-background;
+}
+.price {
+  color: @red1;
+  font-weight: 700;
+}
+
+/*
+03. MODULE
+*/
+@import "components/_typography.less";
+@import "components/_carousel.less";
+
+
+/*
+04. STATE
+*/
+.main-nav a {
+  text-decoration: none;
+}
+.main-nav a:hover {
+  border-bottom: (@border-size * 5) @border-type @border-color;
+  transition: border-color .3s ease;
+}
+// space out social media icons and change link color
+.social-media a {
+  padding: 0 (@padding  - 0.5);
+  color: @white;
+}
+// hover link color for social media icons
+.social-media a:hover {
+  color: @grey;
+}
+
+
+/*
+05. THEME
+*/
+.red1 {
+  color: @red1;
+}
+.red1-bg {
+  background: @red1;
+}
+.red2 {
+  color: @red2;
+}
+.red2-bg {
+  background: @red2;
+}
